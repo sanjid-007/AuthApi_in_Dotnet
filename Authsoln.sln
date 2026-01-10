@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signin.Api", "SigninApi\Signin.Api.csproj", "{E3F2182E-D90F-4EF0-87DC-4D01CB8F6FF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signin.Domain", "Signin.Domain\Signin.Domain.csproj", "{BEADC899-F8A5-4DFE-BC0B-0A7AF4A9EA2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signin.Application", "Signin.Application\Signin.Application.csproj", "{9600FE5D-D6AE-4588-8BA8-53DF73C52542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signin.Infrastructure", "Signin.Infrastructure\Signin.Infrastructure.csproj", "{F7B0FD87-E44C-465C-BEEE-547929BA3E19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3F2182E-D90F-4EF0-87DC-4D01CB8F6FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F2182E-D90F-4EF0-87DC-4D01CB8F6FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F2182E-D90F-4EF0-87DC-4D01CB8F6FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F2182E-D90F-4EF0-87DC-4D01CB8F6FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEADC899-F8A5-4DFE-BC0B-0A7AF4A9EA2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEADC899-F8A5-4DFE-BC0B-0A7AF4A9EA2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEADC899-F8A5-4DFE-BC0B-0A7AF4A9EA2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEADC899-F8A5-4DFE-BC0B-0A7AF4A9EA2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9600FE5D-D6AE-4588-8BA8-53DF73C52542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9600FE5D-D6AE-4588-8BA8-53DF73C52542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9600FE5D-D6AE-4588-8BA8-53DF73C52542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9600FE5D-D6AE-4588-8BA8-53DF73C52542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7B0FD87-E44C-465C-BEEE-547929BA3E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B0FD87-E44C-465C-BEEE-547929BA3E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B0FD87-E44C-465C-BEEE-547929BA3E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B0FD87-E44C-465C-BEEE-547929BA3E19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
