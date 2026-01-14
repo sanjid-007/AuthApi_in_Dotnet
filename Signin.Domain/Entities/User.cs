@@ -1,12 +1,17 @@
 ﻿
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace Signin.Domain.Entities
 {
     public class User
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-
+        
         public string Username { get; set; }
-
+        
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -17,6 +22,8 @@ namespace Signin.Domain.Entities
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public UserRole Role { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpiryTime { get; set; }
 
 
     }

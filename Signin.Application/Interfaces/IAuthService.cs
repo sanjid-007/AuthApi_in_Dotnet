@@ -14,6 +14,7 @@ namespace Signin.Application.Interfaces
 
         Task<RefreshTokenResponse> RefreshTokenAsync(RefreshTokenRequest dto);
 
-        Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest dto);
+        Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest dto, string username);
+        Task<LogoutResponse> SignoutAsync(string userId);
     }
 }

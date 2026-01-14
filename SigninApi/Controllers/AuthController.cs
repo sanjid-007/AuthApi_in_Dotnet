@@ -50,10 +50,26 @@ namespace Signin.Api.Controllers
         [HttpPost("signout")]
         public async Task<IActionResult> Signout()
         {
-            var result = _authService.SignoutAsync();
+            var username = User.FindFirst(ClaimTypes.Name)?.Value;
+            var result = _authService.SignoutAsync(username);
             return Ok(result);
         }
-
+        [Authorize]
+        [HttpPost("me")]
+        public async Task<IActionResult> Me()
+        {
+            var id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var username = User.FindFirst(ClaimTypes.Name)?.Value;
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+            var role = User.FindFirst(ClaimTypes.Role)?.Value;
+            return Ok(new
+            {
+                Id = id,
+                Username = username,
+                Email = email,
+                Role = role
+            });
+        }
 
     }
 }

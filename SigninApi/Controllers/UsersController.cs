@@ -7,13 +7,7 @@ namespace Signin.Api.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        public readonly IUserService _userService;
-        public readonly IUserRepository _userRepository;
-
-        public UsersController(IUserService userService, IUserRepository userRepository) {
-            _userService = userService;
-            _userRepository = userRepository;
-        }
+        
         
 
     }

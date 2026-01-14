@@ -14,6 +14,6 @@ namespace Signin.Application.DTOs
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime LastUpdatedAt { get; set;
+        public DateTime LastUpdatedAt { get; set; }
     }
 }

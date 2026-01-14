@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Signin.Application.DTOs;
 using Signin.Application.Interfaces;
 using Signin.Domain.Entities;
+
 namespace Signin.Application.Services
 {
     public class AuthService : IAuthService
@@ -27,13 +28,13 @@ namespace Signin.Application.Services
             var email = principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value;
             var role = principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role).Value;
 
-            var user = _userRepository.FindUserByUsername(username);
+            var user = await _userRepository.FindUserByUsername(username);
             if (user == null || user.RefreshToken != dto.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
             {
                 throw new Exception("Invalid refresh token");
             }
-            var newJwtToken = _jwtTokenService.GenerateJwtToken(user);
-            var newRefreshToken = _jwtTokenService.GenerateRefreshToken();
+            var newJwtToken =  _jwtTokenService.GenerateJwtToken(user);
+            var newRefreshToken =  _jwtTokenService.GenerateRefreshToken();
             user.RefreshToken = newRefreshToken;
             user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
             await _userRepository.UpdateUser(user);
@@ -46,7 +47,7 @@ namespace Signin.Application.Services
 
         public async Task<SigninResponse> SigninAsync(SigninRequest dto)
         {
-            var user = _userRepository.FindUserByUsername(dto.Username);
+            var user = await _userRepository.FindUserByUsername(dto.Username);
             if(user == null)
             {
                 throw new Exception("User not found");
@@ -75,9 +76,25 @@ namespace Signin.Application.Services
 
         }
 
+        public async Task<LogoutResponse> SignoutAsync(string username)
+        {
+            var user = await _userRepository.FindUserByUsername(username);
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
+            user.RefreshToken = null;
+            user.RefreshTokenExpiryTime = DateTime.MinValue; // Set to a default value instead of null
+            await _userRepository.UpdateUser(user);
+            return new LogoutResponse
+            {
+                Message = "User signed out successfully"
+            };
+        }
+
         public async Task<SignupResponse> SignupAsync(SignupRequest dto)
         {
-            if(await _userRepository.UserExistsAsync(dto.Username, dto.Email))
+            if((await _userRepository.FindUserByUsername(dto.Username)) != null)
             {
                 throw new Exception("User already exists");
             }
@@ -90,7 +107,7 @@ namespace Signin.Application.Services
                 LastName = dto.LastName,
                 CreatedAt = DateTime.UtcNow
             };
-            await _userRepository.AddUser(user);
+            await _userRepository.CreateUser(user);
 
             return new SignupResponse
             {
@@ -106,7 +123,7 @@ namespace Signin.Application.Services
         }
         public async Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest dto, string username)
         {
-            var user = _userRepository.FindUserByUsername(username);
+            var user =await _userRepository.FindUserByUsername(username);
             if (user == null)
             {
                 throw new Exception("User not found");

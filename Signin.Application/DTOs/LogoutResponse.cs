@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Signin.Infrastructure.Repositories
+namespace Signin.Application.DTOs
 {
-    public class UserRepository
+    public class LogoutResponse
     {
+        public string? Message { get; set; }
     }
 }
