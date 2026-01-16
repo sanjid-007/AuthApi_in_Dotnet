@@ -12,8 +12,14 @@ namespace Signin.Infrastructure.Auth
     public class JwtTokenService : IJwtTokenService
     {
         public readonly IConfiguration _configuration;
+        public JwtTokenService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         public string GenerateJwtToken(User user)
         {
+            var e = _configuration["Jwt:Key"];
+
             var securityKey = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

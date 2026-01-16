@@ -19,21 +19,21 @@ namespace Signin.Api.Controllers
         [HttpPost("signup")]
         public async Task<IActionResult> Signup([FromBody] SignupRequest dto)
         {
-           var result =  _authService.SignupAsync(dto);
+           var result = await _authService.SignupAsync(dto);
             return Ok(result);
         }
 
         [HttpPost("signin")]
         public async Task<IActionResult> Signin([FromBody] SigninRequest dto)
         {
-            var result = _authService.SigninAsync(dto);
+            var result = await _authService.SigninAsync(dto);
             return Ok(result);
         }
 
         [HttpPost("refresh-token")]
         public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequest dto)
         {
-            var result = _authService.RefreshTokenAsync(dto);
+            var result = await _authService.RefreshTokenAsync(dto);
             return Ok(result);
         }
 
@@ -42,7 +42,7 @@ namespace Signin.Api.Controllers
         public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileRequest dto)
         {
             var username = User.FindFirst(ClaimTypes.Name)?.Value;
-            var result = _authService.UpdateProfileAsync(dto,username);
+            var result = await _authService.UpdateProfileAsync(dto,username);
             return Ok(result);
         }
 
@@ -51,7 +51,7 @@ namespace Signin.Api.Controllers
         public async Task<IActionResult> Signout()
         {
             var username = User.FindFirst(ClaimTypes.Name)?.Value;
-            var result = _authService.SignoutAsync(username);
+            var result = await _authService.SignoutAsync(username);
             return Ok(result);
         }
         [Authorize]
