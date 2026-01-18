@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Signin.Application.Interfaces
+namespace Signin.Application.Interfaces.Auth
 {
     public interface IPasswordHasher
     {

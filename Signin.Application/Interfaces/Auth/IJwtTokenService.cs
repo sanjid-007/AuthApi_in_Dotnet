@@ -4,9 +4,9 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Signin.Domain.Entities;
+using Signin.Domain.Entities.Auth;
 
-namespace Signin.Application.Interfaces
+namespace Signin.Application.Interfaces.Auth
 {
     public interface IJwtTokenService
     {

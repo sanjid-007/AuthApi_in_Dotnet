@@ -1,8 +1,8 @@
 ﻿
 
 using MongoDB.Driver;
-using Signin.Application.Interfaces;
-using Signin.Domain.Entities;
+using Signin.Application.Interfaces.Auth;
+using Signin.Domain.Entities.Auth;
 using Signin.Infrastructure.Data;
 
 namespace Signin.Infrastructure.Repositories

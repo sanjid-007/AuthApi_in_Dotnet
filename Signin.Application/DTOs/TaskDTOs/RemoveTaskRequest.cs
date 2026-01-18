@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Signin.Application.DTOs
+namespace Signin.Application.DTOs.TaskDTOs
 {
-    public class LogoutResponse
+    public class RemoveTaskRequest
     {
-        public string? Message { get; set; }
+        public string Id { get; set; }
     }
 }

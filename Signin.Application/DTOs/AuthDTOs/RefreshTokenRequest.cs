@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Signin.Application.DTOs
+namespace Signin.Application.DTOs.AuthDTOs
 {
-    public class RefreshTokenResponse
+    public class RefreshTokenRequest
     {
         public string RefreshToken { get; set; }
         public string Token { get; set; }

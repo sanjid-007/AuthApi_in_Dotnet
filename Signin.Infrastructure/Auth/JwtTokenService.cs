@@ -4,8 +4,8 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Signin.Application.Interfaces;
-using Signin.Domain.Entities;
+using Signin.Application.Interfaces.Auth;
+using Signin.Domain.Entities.Auth;
 
 namespace Signin.Infrastructure.Auth
 {

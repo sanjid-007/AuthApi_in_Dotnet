@@ -4,11 +4,11 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Signin.Application.DTOs;
-using Signin.Application.Interfaces;
+using Signin.Application.DTOs.AuthDTOs;
+using Signin.Application.Interfaces.Auth;
 using Signin.Domain.Entities;
 
-namespace Signin.Application.Services
+namespace Signin.Application.Services.Auth
 {
     public class AuthService : IAuthService
     {

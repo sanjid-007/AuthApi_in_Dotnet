@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Signin.Domain.Entities
+namespace Signin.Domain.Entities.Auth
 {
     public class User
     {

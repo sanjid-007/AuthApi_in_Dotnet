@@ -1,7 +1,6 @@
-﻿
-using Signin.Domain.Entities;
+﻿using Signin.Domain.Entities.Auth;
 
-namespace Signin.Application.Interfaces
+namespace Signin.Application.Interfaces.Auth
 {
     public interface IUserRepository
     {
