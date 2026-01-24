@@ -29,7 +29,8 @@ namespace Signin.Application.Services.UserTasks
                 Title = request.Title,
                 Description = request.Description,
                 Priority = request.Priority,
-                Status = request.Status
+                Status = request.Status,
+                UserId = userId
 
             };
             var userTask = await _TaskRepository.AddUserTask(task);

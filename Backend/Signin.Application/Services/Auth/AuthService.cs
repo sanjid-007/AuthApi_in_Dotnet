@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Signin.Application.DTOs.AuthDTOs;
 using Signin.Application.Interfaces.Auth;
 using Signin.Domain.Entities;
+using Signin.Domain.Entities.Auth;
 
 namespace Signin.Application.Services.Auth
 {

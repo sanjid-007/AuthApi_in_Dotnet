@@ -2,7 +2,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Signin.Application.Interfaces.Auth;
+using Signin.Application.Interfaces.UserTasks;
 using Signin.Application.Services.Auth;
+using Signin.Application.Services.UserTasks;
 using Signin.Infrastructure.Auth;
 using Signin.Infrastructure.Data;
 using Signin.Infrastructure.PasswordHasher;
@@ -21,6 +23,8 @@ builder.Services.AddSingleton<MongoDbContext>();
 builder.Services.AddSingleton<IAuthService, AuthService>();
 builder.Services.AddSingleton<IUserRepository, MongoUserRepository>();
 builder.Services.AddSingleton<IPasswordHasher, BCryptPasswordHasher>();
+builder.Services.AddSingleton<ITaskService,TaskService>();
+builder.Services.AddSingleton<ITaskRepository, MongoUserTaskRepository>();
 builder.Services.AddSingleton<IJwtTokenService>(sp =>
 {
     var configuration = sp.GetRequiredService<IConfiguration>();

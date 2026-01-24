@@ -1,4 +1,6 @@
-﻿using Signin.Application.Interfaces.Auth;
+﻿
+
+using Signin.Application.Interfaces.Auth;
 
 namespace Signin.Infrastructure.PasswordHasher
 {
